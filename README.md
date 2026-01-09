@@ -22,8 +22,3 @@ Dominusoft Kids is an educational and informative website for children and paren
 - Contact form for user messages  
 - Dynamic HTML rendering  
 - Admin panel for content and data management  
-
-## Setup Instructions
-1. Clone the repository:  
-   ```bash
-   git clone <repository-url>
