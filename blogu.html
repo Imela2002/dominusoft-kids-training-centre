@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'css/blogu.css' %}">
+	<title>Blogu</title>
+</head>
+<body>
+	<nav>
+	<img src="{% static 'img/logo.jpg' %}" height="40" width="100">
+        <div class="logo"></div>
+        <div class="menu">
+            <ul>
+            <a href="/kryefaqja/">Kryefaqja</a></li>
+            <a href="/rrethnesh/">Rreth nesh</a></li>
+            <a href="/blogu/">Blog</a></li>
+            <a href="/kontaktet/">Kontaktet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+	<header>
+        <h1>Blogu i Dominusoft Kids</h1>
+        <p>Ku mendjet e reja eksplorojnë teknologjinë, krijimtarinë dhe inovacionin!</p>
+    </header>
+
+
+    <div class="container">
+        <section id="recent-posts">
+            <h3>Postimet e fundit</h3>
+
+            {% for news in news_data %}
+            <div class="post">
+                <h2>{{news.title}}</h2>
+                <p>{{news.subheading}}</p>
+                <a href="../news/{{news.id}}">Lexo më shumë →</a>
+            </div>
+            {% endfor %}
+
+    <!--
+            <div class="post">
+                <h2>Çfarë është arti digjital për fëmijë</h2>
+                <p>Çlironi imagjinatën e fëmijës tuaj me këto ide të lehta për fillestarë në artin digjital. Ideale për fëmijët që përdorin Procreate ose Canva!</p>
+                <a href="news2.html">Lexo më shumë →</a>
+            </div>
+
+            <div class="post">
+                <h2>Disa aplikacione kodimi që fëmijët tuaj do t’i pëlqejnë</h2>
+                <p>Eksploroni aplikacione që e kthejnë kodimin në lojë! Nga Tynker te Code.org, këto aplikacione janë perfekte për fëmijët që duan të mësojnë programimin.</p>
+                <a href="news3.html">Lexo më shumë →</a>
+            </div>
+
+            <div class="post">
+                <h2>Si të balancojmë kohën në ekran me përdorimin produktiv të teknologjisë</h2>
+                <p>Këshilla për ta bërë kohën në ekran të vlefshme dhe për të shmangur përdorimin e tepruar.</p>
+                <a href="news4.html">Lexo më shumë →</a>
+            </div>
+    -->
+        </section>
+
+    </div>
+
+     <footer>
+		   <div class="socialmedia">
+
+	   <a href="https://www.instagram.com/dominusoft_kids?igsh=MThoYm10dTg1cGNzdw==">
+	   <i class="fa-brands fa-instagram"></i>
+	   </a>
+
+
+	   <a href="https://www.facebook.com/">
+	   <i class="fa-brands fa-facebook-f"></i>
+	   </a>
+
+	   <a href="https://www.tiktok.com/en/">
+	   <i class="fa-brands fa-tiktok"></i>
+	   </a>
+	   </div><br>
+	   <br>
+
+
+        <div class="menu">
+            <ul>
+            <a href="/kryefaqja/">Kryefaqja</a></li>
+            <a href="/rrethnesh/">Rreth nesh</a></li>
+            <a href="/blogu/">Blog</a></li>
+            <a href="/kontaktet/">Kontaktet</a></li>
+            </ul>
+        </div><br>
+		<br>
+		<br>
+
+        © 2024 Dominusoft Kids, All Rights Reserved.
+
+    </footer>
+</body>
+</html>

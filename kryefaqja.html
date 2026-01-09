@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/kryefaqja.css' %}">
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="{% static 'js/kryefaqja.js' %}"></script>
+	<title>Kryefaqja</title>
+    <style>
+          .banner {
+            position: relative;
+            text-align: center;
+            background-image: url("{% static 'img/backgroundimage.jpg' %}");
+            background-size: auto;
+			background-repeat: no-repeat;
+            background-position: center;
+            height: 400px;
+            color: white;
+        }
+
+         button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #5bd6f4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border-color: white;
+        }
+
+        button:hover {
+            background-color: #34aef3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+    <img src="{% static 'img/logo.jpg' %}" height="40" width="100">
+        <div class="logo"></div>
+        <div class="menu">
+            <ul>
+            <a href="/kryefaqja/">Kryefaqja</a></li>
+            <a href="/rrethnesh/">Rreth nesh</a></li>
+            <a href="/blogu/">Blog</a></li>
+            <a href="/kontaktet/">Kontaktet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section class="banner">
+        <div class="banner-text">
+		    <p class="typed-text"></p><br>
+            <h1>Te luajme duke mesuar!</h1><br>
+            <p>Dominusoft Kids - Akademia e Aventurave te Dijes!</p>
+        </div>
+    </section>
+
+    <main>
+    <div class="text-block">
+    <h2>Pervoja ne Dominusoft Kids</h2>
+	  Dominusoft Kids ofron nje mjedis edukativ, argëtues dhe krijues, duke pergatitur femijët per te ardhmen permes mesimit te teknologjise dhe dizajnit. Me nje perkushtim te thelle ndaj zhvillimit te talenteve te reja, kjo qender do te jetë vendi ku imaginata dhe aftesite marrin krahe.
+    </div>
+     <div class="image-large"><img src="{% static 'img/i1.jpg' %}"></div>
+    </main>
+
+
+    <section class="program-section">
+        <h2>Programet</h2><br>
+        <div class="program-cards">
+
+        {% for category in categories %}
+            <div class="program-card">
+                <img src="{{ category.photo.url }}" alt="{{ category.name }}" width="100">
+				<h4>{{ category.name }}</h4>
+                <a href="{% url 'programs_by_category' category.id %}">
+                    <button>{{ category.button_label }}</button>
+                </a>
+            </div>
+               {% endfor %}
+
+            <!--
+            <div class="program-card">
+                 <img src="{% static 'img/programi2.jpg' %}">
+				<h4>Mosha 11-14 vjec</h4>
+                <a href="programi2.html" class="read-more">Meso me shume</a>
+            </div>
+            <div class="program-card">
+                 <img src="{% static 'img/programi3.jpg' %}">
+				<h4>Mosha 15+</h4>
+                <a href="programi3.html" class="read-more">Meso me shume</a>
+            </div>
+            -->
+        </div><br>
+		<br>
+
+        <h3>Udhetimi ne boten e teknologjise sapo ka nisur...</h3>
+    </section>
+
+    <footer>
+		   <div class="socialmedia">
+
+	   <a href="https://www.instagram.com/dominusoft_kids?igsh=MThoYm10dTg1cGNzdw==">
+	   <i class="fa-brands fa-instagram"></i>
+	   </a>
+
+
+	   <a href="https://www.facebook.com/">
+	   <i class="fa-brands fa-facebook-f"></i>
+	   </a>
+
+	   <a href="https://www.tiktok.com/en/">
+	   <i class="fa-brands fa-tiktok"></i>
+	   </a>
+	   </div><br>
+	   <br>
+
+
+        <div class="menu">
+            <ul>
+            <a href="/kryefaqja/">Kryefaqja</a></li>
+            <a href="/rrethnesh/">Rreth nesh</a></li>
+            <a href="/blogu/">Blog</a></li>
+            <a href="/kontaktet/">Kontaktet</a></li>
+            </ul>
+        </div><br>
+		<br>
+		<br>
+
+        © 2024 Dominusoft Kids, All Rights Reserved.
+
+    </footer>
+
+</body>
+</html>

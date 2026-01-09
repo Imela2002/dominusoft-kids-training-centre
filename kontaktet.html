@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'css/kontaktet.css' %}">
+  <title>Kontaktet</title>
+</head>
+<body>
+    <nav>
+        <img src="{% static 'img/logo.jpg' %}" height="40" width="100">
+        <div class="logo"></div>
+        <div class="menu">
+            <ul>
+            <a href="/kryefaqja/">Kryefaqja</a></li>
+            <a href="/rrethnesh/">Rreth nesh</a></li>
+            <a href="/blogu/">Blog</a></li>
+            <a href="/kontaktet/">Kontaktet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h1>Per cdo pyetje apo paqartesi ju lutemi te na kontaktoni ne nje nga format tona te kontaktit ose te na vizitoni prane qendres tone.</h1>
+        </section>
+
+        <div class="content">
+            <section class="features">
+                <div class="feature">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>Phone number</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Email</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Location</p>
+                </div>
+            </section>
+
+            <div class="form-container">
+
+<form method="POST">
+  {% csrf_token %}
+    {{form.as_table}}
+        <button type="submit">Dërgo</button>
+</form>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.3231677132544!2d19.812061275915!3d41.32358557130806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350313540c99c4b%3A0x7398d6f11582ba30!2sDominusoft%20Education!5e0!3m2!1sen!2s!4v1734430163173!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="socialmedia">
+            <a href="https://www.instagram.com/dominusoft_kids?igsh=MThoYm10dTg1cGNzdw==">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/en/">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </div><br><br><br>
+        <div class="menu">
+            <ul>
+            <a href="/kryefaqja/">Kryefaqja</a></li>
+            <a href="/rrethnesh/">Rreth nesh</a></li>
+            <a href="/blogu/">Blog</a></li>
+            <a href="/kontaktet/">Kontaktet</a></li>
+            </ul>
+        </div><br><br><br>
+        © 2024 Dominusoft Kids, All Rights Reserved.
+    </footer>
+</body>
+</html>
